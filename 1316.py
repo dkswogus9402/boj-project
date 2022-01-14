@@ -35,3 +35,4 @@ for input_str in input_strs:
 
 result = num - count
 print(result)
+
