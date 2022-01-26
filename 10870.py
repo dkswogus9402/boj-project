@@ -1,4 +1,4 @@
-num = 7
+num = int(input())
 
 def Fibona(num):
     if num <= 1:
