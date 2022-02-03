@@ -42,10 +42,13 @@ def check_count(input_lists):
 
     count = min(count_1, count_2)
     return count
+
+
 M, N = map(int, input().split())
 
 rows = M - 8 + 1
 columns = N - 8 + 1
+
 input_lists = []
 for k in range(M):
     input_ = input()
@@ -54,15 +57,18 @@ for k in range(M):
 counts = []
 start_row = 0
 end_row = 7
+
 for row in range(rows):
     temp = input_lists[start_row : end_row + 1]
     start_column = 0
     end_column = 7
+
     for i in range(columns):
         input_list = []
         for value in temp:
             input_list.append(value[start_column : end_column + 1])
         counts.append(check_count(input_list))
+
         start_column += 1; end_column += 1
     start_row += 1; end_row += 1
 

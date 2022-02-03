@@ -1,12 +1,9 @@
-import time
-
 num = int(input())
 
 input_nums = []
 for i in range(num):
     input_num = int(input())
     input_nums.append(input_num)
-start = time.time()
 
 def new_sort(input_nums):
         
@@ -19,8 +16,6 @@ def new_sort(input_nums):
     return input_nums
 
 results = new_sort(input_nums)
-end = time.time()
 
-print(end-start)
 for result in results:
     print(result)
