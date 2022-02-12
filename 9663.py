@@ -16,7 +16,7 @@ def n_queens(x):
         ans += 1
 
     else:
-        for i in range(1, n+1):
+        for i in range(n):
             # [x, i]에 퀸을 놓겠다.
             row[x] = i
             if is_promising(x):
