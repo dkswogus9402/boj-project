@@ -26,13 +26,13 @@ def change_state(i):
     else:
         return 1
 
-def man_acting(num, N, space):
+def man_acting(num, N, space): # 남자 행동
     for i in range(N):
-        if (i+1) % num == 0:
+        if (i+1) % num == 0: # 배수라면
             space[i] = change_state(space[i]) 
             # 스위치의 상태를 바꾼다.
 
-def women_acting(num, N, space):
+def women_acting(num, N, space): # 여자의 행동 
     num = num - 1 # 0번 부터 시작하기 때문
     space[num] = change_state(space[num])
     for i in range(1, N//2+1):
@@ -53,13 +53,13 @@ student_num = int(input())
 for i in range(student_num):
     gender, num = map(int, input().split())
 
-    if gender == 1:
+    if gender == 1: # 남자라면
         man_acting(num, N, A)
 
-    elif gender == 2:
+    elif gender == 2: # 여자라면
         women_acting(num, N, A)
 
-iter_num = N // 20 if N % 20 == 0 else (N // 20 + 1)
+iter_num = N // 20 if N % 20 == 0 else (N // 20 + 1) # 20개씩 끈기니까 출력 예시
 
 for i in range(iter_num):
-    print(*A[i * 20 : (i+1) * 20])
+    print(*A[i * 20 : (i+1) * 20]) # 20개씩 출력

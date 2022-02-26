@@ -25,7 +25,7 @@ A  B  C  D  E  F
  4  3   1  5   6  2
 
 '''
-def face_to_face(i):
+def face_to_face(i): # 각 해당하는 반대편 자리수
     if i == 0:
         return 5
     elif i == 1:
@@ -48,7 +48,7 @@ for i in range(6): # [2, 3, 1, 6, 5, 4]
     results = []
     result = []
     j = face_to_face(i)
-    for jj in range(6):
+    for jj in range(6): # 해당 하는 자리수를 제외한 수 중 max값 구함
         if jj == i or jj == j:
             continue
         result.append(A[0][jj])
@@ -56,20 +56,20 @@ for i in range(6): # [2, 3, 1, 6, 5, 4]
     results.append(max_value)
     cnt = 1
 
-    while cnt < N:
+    while cnt < N: # cnt를 플러스 해주면서 자리수를 제외한 수 중 max값 구함
         for k in range(6):
-            if A[cnt][k] == A[cnt-1][j]:
-                break
-        j = face_to_face(k)
+            if A[cnt][k] == A[cnt-1][j]: # 전에 해당하는 값을 찾음
+                break # 해당하는 인덱스를 찾음
+        j = face_to_face(k) # 인덱스로 이동
         result = []
         for jj in range(6):
-            if jj == k or jj == j:
+            if jj == k or jj == j: # 해당 자리수를 제외한 수 중 max 값을 구함
                 continue
             result.append(A[cnt][jj])
         cnt += 1
         max_value = max(result)
 
         results.append(max_value)
-    final.append(sum(results))
-print(max(final))
+    final.append(sum(results)) # 이렇게 구한 max 값의 합을 구함
+print(max(final)) # 합을 구한 것들 중 max 값을 구함
 

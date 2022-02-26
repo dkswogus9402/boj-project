@@ -16,4 +16,4 @@ for i in range(N):
     if cnt == 0 and len(stack) == 0:
         print('YES')
     else:
-        print('No')
+        print('NO')
