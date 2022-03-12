@@ -1,15 +1,5 @@
-N = 6
-board = [[0 for i in range(N)] for j in range(N)]
+A = [[1, 3], [0, 3],[0, 4] ]
+B = [[5, 4], [5, 2]]
 
-def check(i):
-    
-
-def DFS():
-    if cnt == N:
-        result += 1
-        return
-    
-    for j in range(N):
-
-        board[i][j] = 1
-    
+A.sort()
+print(A)
