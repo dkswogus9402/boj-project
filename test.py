@@ -1,5 +1,16 @@
-A = [[1, 3], [0, 3],[0, 4] ]
-B = [[5, 4], [5, 2]]
+def DFS(N, M, depth):
+    global dfs_list
+    global visited
 
-A.sort()
-print(A)
+    if depth >= M:
+        print(*dfs_list)
+        return
+
+    else:
+        for n in range(1, N+1):
+            if visited[n-1] == False:
+                visited[n - 1] = True
+                dfs_list[depth] = n
+                DFS(N, M, depth+1)
+                visited[n - 1] = False
+
